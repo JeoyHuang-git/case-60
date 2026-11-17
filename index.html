@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090f1c">
+  <meta name="description" content="60秒破案挑战：阅读线索，锁定关键证据，揪出真凶。免费手机与电脑侦探小游戏。">
+  <title>60秒破案挑战 | CASE//60</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="返回游戏首页"><span class="brand-mark">✦</span><span>CASE<span class="accent">//</span>60</span></a>
+    <div class="topbar-right"><span class="signal"><span class="signal-dot"></span> DETECTIVE SYSTEM ONLINE</span><button id="soundBtn" class="icon-btn" type="button" aria-label="切换音效" title="音效开关 (M)">♫ <span id="soundLabel">ON</span></button></div>
+  </header>
+  <main class="layout">
+    <section id="startScreen" class="screen start-screen">
+      <div class="intro-copy"><div class="eyebrow"><span class="eyebrow-line"></span> 机密档案 / CLASSIFIED FILES</div><h1>60<span class="unit">秒</span><br><span class="thin">破案挑战</span><span class="red-dot">.</span></h1><p class="lead">每个人都在说谎。<br>但现场的证据不会。</p><p class="start-description">阅读现场线索，找出唯一能推翻谎言的关键证据，在倒计时归零前锁定真凶。</p><div class="start-actions"><button class="primary-btn" type="button" id="startBtn"><span>开启调查</span><span class="arrow">↗</span></button><span class="helper">6 起案件 / 每案 60 秒</span></div><div class="best-summary"><span>你的历史最高分</span><strong id="homeBest">00000</strong><span class="best-label">BEST SCORE</span></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="case-folder"><div class="folder-top">POLICE DEPARTMENT <span>NO. 060</span></div><div class="folder-body"><div class="stamp">TOP<br>SECRET</div><div class="folder-circle"><span>?</span></div><div class="file-lines"><i></i><i></i><i></i><i></i></div><div class="folder-footer">EVIDENCE · SUSPECT · TRUTH</div></div></div><div class="art-label">CONFIDENTIAL / 00—60</div></div>
+      <div class="bottom-strip"><span>01 / 观察证物</span><span>02 / 识破证词</span><span>03 / 锁定真凶</span></div>
+    </section>
+    <section id="gameScreen" class="screen game-screen hidden" aria-live="polite">
+      <div class="game-head"><div><div class="eyebrow small">ACTIVE INVESTIGATION <span class="separator">/</span> <span id="roundNum">01</span> OF 06</div><h2 id="caseTitle">案件标题</h2><p id="caseSubtitle" class="subheading"></p></div><div class="status-group"><div class="stat-box"><small>累计积分 / SCORE</small><strong id="score">00000</strong></div><div class="timer-box" id="timerBox"><div class="timer-ring" id="timerRing"><span id="timer">60</span></div><small>SECONDS LEFT</small></div></div></div>
+      <div class="progress-track" aria-label="案件进度"><div id="progressFill"></div></div>
+      <div class="case-layout"><section class="scene-panel"><div class="panel-label"><span class="diamond">◆</span> 现场报告 / SCENE REPORT <span class="panel-count">A—01</span></div><div class="case-scene"><div class="scene-icon" id="sceneIcon">⌕</div><p id="sceneText"></p></div><div class="divider-title"><span>物证档案</span><span>CHOOSE THE KEY EVIDENCE</span></div><div id="clueList" class="clue-list"></div><div class="selection-hint"><span class="mini-icon">◎</span> 点击一条<span class="gold">决定性证据</span>，用于拆穿凶手的谎言。</div></section>
+      <section class="suspect-panel"><div class="panel-label"><span class="diamond">◆</span> 嫌疑人口供 / INTERROGATION <span class="panel-count">B—02</span></div><div id="suspectList" class="suspect-list"></div><div class="verdict-area"><div class="chosen-status"><span id="clueStatus">证据：尚未锁定</span><span id="suspectStatus">嫌疑人：尚未锁定</span></div><button type="button" class="primary-btn verdict-btn" id="submitBtn" disabled><span>提交最终指认</span><span class="arrow">→</span></button><div class="keyboard-tip">电脑快捷键：Q/W/E 选证据 · 1/2/3 选嫌疑人 · Enter 提交</div></div></section></div>
+      <div class="game-footer"><span id="streakText">连破记录 × 0</span><span>提示：证词中只有一人被关键物证直接推翻</span><button type="button" id="quitBtn">退出本轮 ↗</button></div>
+    </section>
+    <section id="endScreen" class="screen end-screen hidden"><div class="end-eyebrow">INVESTIGATION COMPLETED</div><div class="end-symbol">✦</div><h2 id="endTitle">调查结束</h2><p id="endSubtitle">真相总会留下痕迹。</p><div class="end-score"><span>最终得分 / FINAL SCORE</span><strong id="finalScore">00000</strong><div id="newRecord" class="new-record hidden">✦ NEW PERSONAL BEST ✦</div></div><div class="result-grid"><div><small>成功破案</small><b id="solvedCount">0 / 6</b></div><div><small>最高连胜</small><b id="maxStreak">0</b></div><div><small>历史最佳</small><b id="endBest">0</b></div></div><div class="end-actions"><button class="primary-btn" type="button" id="replayBtn">再来一轮 <span>↗</span></button><button type="button" class="secondary-btn" id="shareBtn">分享成绩 <span>↗</span></button></div><p class="footnote">最高分只保存在当前设备浏览器中，不会上传到服务器。</p></section>
+  </main>
+  <div id="resultOverlay" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="resultHeading"><div class="result-modal"><div id="resultBadge" class="result-badge">CASE SOLVED</div><div class="modal-symbol" id="resultSymbol">✓</div><h2 id="resultHeading">推理正确</h2><p id="resultExplain"></p><div class="result-reward"><span>本案得分</span><strong id="reward">+000</strong></div><button id="nextBtn" class="primary-btn" type="button"><span id="nextLabel">下一起案件</span><span>→</span></button></div></div>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="game.js" defer></script>
+</body>
+</html>
